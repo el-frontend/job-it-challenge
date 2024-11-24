@@ -1,9 +1,11 @@
 import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { ApiBearerAuth } from '@nestjs/swagger';
 import { AuthGuard } from 'src/auth/auth.guard';
 import { Job } from './entities/job.entity';
 import { CreateJobDTO } from './jobs.dto';
 import { JobsService } from './jobs.service';
 
+@ApiBearerAuth()
 @Controller('jobs')
 export class JobsController {
   constructor(private readonly jobService: JobsService) {}
