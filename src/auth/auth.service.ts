@@ -25,6 +25,7 @@ export class AuthService {
     return {
       access_token: await this.jwtService.signAsync(payload, {
         secret: process.env.JWT_SECRET,
+        expiresIn: '30d',
       }),
     };
   }
@@ -32,6 +33,7 @@ export class AuthService {
   async signUp(
     createUserDto: CreateUserDto,
   ): Promise<{ access_token: string }> {
+    // check password strength
     const passwordHash = await encryptPassword(createUserDto.password);
     const user = await this.usersService.create({
       ...createUserDto,

@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/users/entities/user.entity';
-import { Repository } from 'typeorm';
+import { LessThanOrEqual, Like, MoreThanOrEqual, Repository } from 'typeorm';
 import { Job } from './entities/job.entity';
 import { JobCandidate } from './entities/job_candidates.entity';
-import { CreateJobDTO } from './jobs.dto';
+import { CreateJobDTO, JobSearchDTO } from './jobs.dto';
 
 @Injectable()
 export class JobsService {
@@ -17,8 +17,20 @@ export class JobsService {
     private usersRepository: Repository<User>,
   ) {}
 
-  async findAll(): Promise<Job[]> {
-    return this.jobsRepository.find();
+  async findAll(search: JobSearchDTO): Promise<Job[]> {
+    console.log(search);
+    // Implement search logic
+    return this.jobsRepository.find({
+      where: {
+        ...(search?.jobType && { jobType: search.jobType }),
+        ...(search?.location && { location: search.location }),
+        ...(search?.salary_gt && { salary: MoreThanOrEqual(search.salary_gt) }),
+        ...(search?.salary_lt && { salary: LessThanOrEqual(search.salary_lt) }),
+        ...(search?.search && {
+          description: Like(`%${search.search}%`),
+        }),
+      },
+    });
   }
 
   async findOne(id: number): Promise<Job> {

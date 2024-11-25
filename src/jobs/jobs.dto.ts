@@ -12,3 +12,11 @@ export class CreateJobDTO {
   @ApiProperty()
   jobType: string;
 }
+
+export class JobSearchDTO {
+  jobType?: string;
+  salary_gt?: number;
+  salary_lt?: number;
+  location?: string;
+  search?: string;
+}

@@ -11,3 +11,14 @@ export const comparePassword = async (
 ): Promise<boolean> => {
   return await bcrypt.compare(password, hash);
 };
+
+export const checkPasswordStrength = (password: string): boolean => {
+  // At least 8 characters, one uppercase, one lowercase, one number and one special character
+  return (
+    password.length > 8 &&
+    /\d/.test(password) &&
+    /[a-z]/i.test(password) &&
+    /[A-Z]/.test(password) &&
+    /\W/.test(password)
+  );
+};

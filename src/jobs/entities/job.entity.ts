@@ -1,5 +1,6 @@
 import { User } from 'src/users/entities/user.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { JobType } from '../jobs.enum';
 
 @Entity()
 export class Job {
@@ -18,7 +19,11 @@ export class Job {
   @Column()
   location: string;
 
-  @Column()
+  @Column({
+    type: 'enum',
+    enum: JobType,
+    default: JobType.ONSITE,
+  })
   jobType: string;
 
   @ManyToOne(() => User, (user) => user.id)
