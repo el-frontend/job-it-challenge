@@ -26,6 +26,18 @@ export class Job {
   })
   jobType: string;
 
+  @Column()
+  tags: string[];
+
+  @Column()
+  company_name: string;
+
+  @Column()
+  company_image: string;
+
+  @Column({ default: new Date() })
+  createAt: Date;
+
   @ManyToOne(() => User, (user) => user.id)
   createdBy: User;
 }

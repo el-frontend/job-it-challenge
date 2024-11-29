@@ -1,0 +1,114 @@
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-between {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  justify-items: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-start {
+  justify-content: start;
+  align-items: start;
+}
+
+.gap-1 {
+  gap: var(--base);
+}
+
+.gap-2 {
+  gap: calc(var(--base) * 2);
+}
+
+.gap-3 {
+  gap: calc(var(--base) * 3);
+}
+
+.font-base {
+  font-size: var(--font-base);
+}
+.font-sm {
+  font-size: var(--font-sm);
+}
+
+.font-xs {
+  font-size: var(--font-xs);
+}
+
+.font-md {
+  font-size: var(--font-md);
+}
+
+.font-lg {
+  font-size: var(--font-lg);
+}
+
+.font-xl {
+  font-size: var(--font-xl);
+}
+
+.color-base {
+  color: var(--primary-color);
+}
+
+.color-gray {
+  color: var(--gray-color);
+}
+
+.w-1 {
+  width: 100%;
+}
+
+.h-1 {
+  height: 100%;
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.p-1 {
+  padding: var(--base);
+}
+
+.p-2 {
+  padding: var(--base-2);
+}
+
+.px-1 {
+  padding-left: var(--base);
+  padding-right: var(--base);
+}
+
+.px-2 {
+  padding-left: var(--base-2);
+  padding-right: var(--base-2);
+}
+
+.py-1 {
+  padding-top: var(--base);
+  padding-bottom: var(--base);
+}
+
+.py-2 {
+  padding-top: var(--base-2);
+  padding-bottom: var(--base-2);
+}

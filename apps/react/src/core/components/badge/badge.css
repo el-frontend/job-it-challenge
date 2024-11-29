@@ -1,0 +1,26 @@
+.badge {
+  border-radius: var(--border-radius);
+  height: 28px;
+  padding: 4px 12px;
+  font-size: var(--font-sm);
+  max-width: fit-content;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+.badge-variant-primary {
+  background-color: var(--primary-color);
+  color: var(--foreground-contrast-color);
+}
+
+.badge-variant-default {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+}
+
+.badge-variant-outline {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}

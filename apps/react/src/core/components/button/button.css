@@ -1,0 +1,62 @@
+@property --button-padding {
+  syntax: "<length>+";
+  inherits: true;
+  initial-value: 8px 16px;
+}
+
+@property --button-border-radius {
+  syntax: "<length> | <percent>";
+  inherits: true;
+  initial-value: 42px;
+}
+
+@property --button-background {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #141414;
+}
+
+@property --button-foreground {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f9f9f9;
+}
+
+.button {
+  padding: var(--button-padding);
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-background);
+  color: var(--button-foreground);
+  font-size: var(--font-base);
+  font-weight: 300;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 36px;
+  display: grid;
+  place-content: center;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+/* Shapes */
+.button-shape-rounded {
+  --button-border-radius: 42px;
+}
+.button-shape-circle {
+  --button-border-radius: 100%;
+  --button-padding: 4px;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Variant */
+.button-variant-default {
+  --button-background: var(--white-color);
+  --button-foreground: var(--foreground-color);
+}
