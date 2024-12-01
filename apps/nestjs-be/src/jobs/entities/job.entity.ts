@@ -36,7 +36,7 @@ export class Job {
   company_image: string;
 
   @Column({ default: new Date() })
-  createAt: Date;
+  createdAt: Date;
 
   @ManyToOne(() => User, (user) => user.id)
   createdBy: User;

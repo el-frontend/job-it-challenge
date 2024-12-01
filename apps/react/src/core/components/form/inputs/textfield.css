@@ -1,0 +1,10 @@
+.textfield {
+  border: none;
+  background-color: transparent;
+  color: var(--foreground-color);
+  min-height: 32px;
+  min-width: 120px;
+  &:hover {
+    accent-color: unset;
+  }
+}

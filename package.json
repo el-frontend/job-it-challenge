@@ -15,5 +15,8 @@
   "packageManager": "npm@10.0.0",
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "dependencies": {
+    "classnames": "^2.5.1"
+  }
 }

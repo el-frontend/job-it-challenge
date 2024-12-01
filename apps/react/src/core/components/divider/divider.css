@@ -1,0 +1,17 @@
+.divider {
+  background-color: var(--gray-color);
+}
+
+.divider-vertical {
+  width: 1px;
+  height: 100%;
+  padding-left: var(--base);
+  padding-right: var(--base);
+}
+
+.divider-horizontal {
+  width: 100%;
+  height: 1px;
+  padding-top: var(--base);
+  padding-bottom: var(--base);
+}
