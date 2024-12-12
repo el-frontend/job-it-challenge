@@ -1,4 +1,4 @@
-import { JobType } from "../../types/job";
+import { JobType } from "@/modules/jobs/types/job";
 
 export type JobFiltersType = {
   search: string;

@@ -1,4 +1,4 @@
-import JobFilters from "../components/job-filters/JobFilters";
+import JobFilters from "@/modules/jobs/components/job-filters/JobFilters";
 
 const JobSearchContainer = () => {
   return (

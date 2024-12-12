@@ -1,7 +1,7 @@
 import "./job-filters.css";
 
 import { FormProvider, useForm } from "react-hook-form";
-import { JobType } from "../../types/job";
+import { JobType } from "@/modules/jobs/types/job";
 import JobFiltersForm from "./JobFiltersForm";
 import { JobFiltersType } from "./types";
 
