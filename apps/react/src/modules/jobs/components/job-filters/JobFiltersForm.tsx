@@ -4,9 +4,9 @@ import {
     LocateIcon,
     SearchIcon,
 } from "lucide-react";
-import RHFMultiRangeSliderField from "../../../../core/components/form/rhf/RHFMultiRangeSliderField";
-import RHFSelectField from "../../../../core/components/form/rhf/RHFSelectField";
-import RHFTextField from "../../../../core/components/form/rhf/RHFTextField";
+import RHFMultiRangeSliderField from "@/core/components/form/rhf/RHFMultiRangeSliderField";
+import RHFSelectField from "@/core/components/form/rhf/RHFSelectField";
+import RHFTextField from "@/core/components/form/rhf/RHFTextField";
 import JobFilterInput from "./JobFilterInput";
 
 const JobFiltersForm = () => {

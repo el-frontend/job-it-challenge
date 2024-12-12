@@ -1,4 +1,4 @@
-import AvatarName from "../../../../core/components/avatar/AvatarName";
+import AvatarName from "@/core/components/avatar/AvatarName";
 import './navbar.css';
 
 const Navbar = () => {

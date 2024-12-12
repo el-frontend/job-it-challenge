@@ -1,5 +1,5 @@
-import Divider from "../../../../core/components/divider/Divider";
-import CircleIcon from "../../../../core/components/icons/CircleIcon";
+import Divider from "@/core/components/divider/Divider";
+import CircleIcon from "@/core/components/icons/CircleIcon";
 
 type Props = {
   icon: React.ReactNode;
