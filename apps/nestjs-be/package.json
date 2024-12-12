@@ -5,9 +5,6 @@
   "author": "Carlos Chao Cortes",
   "private": true,
   "license": "UNLICENSED",
-  "workspaces": [
-    "apps/nestjs-be"
-  ],
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
