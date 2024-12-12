@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-be",
+  "name": "@jobs-it/nestjs-be",
   "version": "0.0.1",
   "description": "<p align=\"center\">   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"120\" alt=\"Nest Logo\" /></a> </p>",
   "author": "Carlos Chao Cortes",
