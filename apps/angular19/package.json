@@ -9,9 +9,6 @@
     "test": "ng test",
     "serve:ssr:angular19": "node dist/angular19/server/server.mjs"
   },
-  "workspaces": [
-    "apps/angular19"
-  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.0.0",
