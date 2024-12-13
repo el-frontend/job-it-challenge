@@ -10,7 +10,13 @@
     },
     "dev": {
       "persistent": true,
-      "cache": false
+      "cache": false,
+      "dependsOn": ["^dev"]
+    },
+    "start:dev": {
+      "persistent": true,
+      "cache": false,
+      "dependsOn": ["^start:dev"]
     }
   }
 }
