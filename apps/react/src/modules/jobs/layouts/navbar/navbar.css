@@ -1,9 +1,0 @@
-.navbar {
-  background-color: var(--primary-color);
-  color: var(--foreground-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 72px;
-  border-bottom: 1px solid var(--border-color);
-}

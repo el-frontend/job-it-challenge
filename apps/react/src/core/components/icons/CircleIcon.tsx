@@ -1,12 +1,15 @@
 import React from "react";
-import "./circle-icon.css";
 
 type Props = {
   icon: React.ReactNode;
 };
 
 const CircleIcon: React.FC<Props> = ({ icon }) => {
-  return <div className="circle-icon flex flex-center">{icon}</div>;
+  return (
+    <div className="flex justify-center items-center p-2 w-10 h-10 rounded-full border border-white">
+      {icon}
+    </div>
+  );
 };
 
 export default CircleIcon;

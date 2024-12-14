@@ -8,7 +8,7 @@ type Props = {
 
 const JobFilterInput: React.FC<Props> = ({ children, icon }) => {
   return (
-    <div className="flex gap-2 flex-center">
+    <div className="flex gap-4 justify-center items-center">
       <CircleIcon icon={icon} />
       {children}
       <Divider />
