@@ -1,22 +1,31 @@
-import {
-    BriefcaseBusinessIcon,
-    CircleDollarSign,
-    LocateIcon,
-    SearchIcon,
-} from "lucide-react";
 import RHFMultiRangeSliderField from "@/core/components/form/rhf/RHFMultiRangeSliderField";
 import RHFSelectField from "@/core/components/form/rhf/RHFSelectField";
 import RHFTextField from "@/core/components/form/rhf/RHFTextField";
+import { fCurrency } from "@/lib/numbers";
+import {
+  BriefcaseBusinessIcon,
+  CircleDollarSign,
+  LocateIcon,
+  SearchIcon,
+} from "lucide-react";
 import JobFilterInput from "./JobFilterInput";
 
 const JobFiltersForm = () => {
   return (
-    <div className="flex flex-center gap-2">
+    <div className="container mx-auto flex justify-between items-center w-full gap-2">
       <JobFilterInput icon={<SearchIcon />}>
-        <RHFTextField name="search1" />
+        <RHFTextField
+          name="search"
+          placeholder="Search a job..."
+          className="border-none"
+        />
       </JobFilterInput>
       <JobFilterInput icon={<LocateIcon />}>
-        <RHFTextField name="location" />
+        <RHFTextField
+          name="location"
+          placeholder="Type the location"
+          className="border-none"
+        />
       </JobFilterInput>
       <JobFilterInput icon={<BriefcaseBusinessIcon />}>
         <RHFSelectField
@@ -38,7 +47,25 @@ const JobFiltersForm = () => {
         />
       </JobFilterInput>
       <JobFilterInput icon={<CircleDollarSign />}>
-        <RHFMultiRangeSliderField name="salary" />
+        <RHFMultiRangeSliderField
+          name="salary"
+          min={1200}
+          max={20000}
+          className="ml-4"
+          renderLabel={(value) =>
+            value
+              ? fCurrency({
+                  amount: +value,
+                  options: {
+                    currency: "USD",
+                    maximumFractionDigits: 0,
+                    style: "currency",
+                    currencyDisplay: "symbol",
+                  },
+                })
+              : value
+          }
+        />
       </JobFilterInput>
     </div>
   );

@@ -1,26 +1,37 @@
-import "./select-field.css";
-
-import type { ChangeEventHandler } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 type Props = {
   name: string;
-  value: string | number;
-  options: { label: string; value: string | number }[];
-  onChange?: ChangeEventHandler<HTMLSelectElement>;
+  value: string;
+  options: { label: string; value: string }[];
+  placeholder?: string;
+  onChange?: (value: string) => void;
 };
 
-const SelectField: React.FC<Props> = ({ name, onChange, value, options }) => {
+const SelectField: React.FC<Props> = ({
+  name,
+  onChange,
+  value,
+  options,
+  placeholder,
+}) => {
   return (
-    <select
-      onChange={onChange}
-      name={name}
-      value={value}
-      className="select-field"
-    >
-      {options.map((option) => (
-        <option value={option.value}>{option.label}</option>
-      ))}
-    </select>
+    <Select name={name} value={value} onValueChange={onChange}>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent>
+        {options.map((option) => (
+          <SelectItem value={option.value}>{option.label}</SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 };
 
