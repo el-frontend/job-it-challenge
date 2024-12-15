@@ -11,6 +11,12 @@ export class CreateJobDTO {
   location: string;
   @ApiProperty()
   jobType: string;
+  @ApiProperty()
+  tags: string;
+  @ApiProperty()
+  company_name: string;
+  @ApiProperty()
+  company_image: string;
 }
 
 export class JobSearchDTO {

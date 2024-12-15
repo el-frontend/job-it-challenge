@@ -1,4 +1,5 @@
-import "./layout.css";
+import { queryClient } from "@/core/utils/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./navbar/Navbar";
 
 type RootLayoutProps = {
@@ -7,10 +8,12 @@ type RootLayoutProps = {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <div className="layout">
-      <Navbar />
-      <main className="layout-main">{children}</main>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="w-screen h-screen overflow-hidden">
+        <Navbar />
+        <main className="flex flex-col w-full h-full">{children}</main>
+      </div>
+    </QueryClientProvider>
   );
 };
 
