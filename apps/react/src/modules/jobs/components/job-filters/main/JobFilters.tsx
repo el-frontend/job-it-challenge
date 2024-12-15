@@ -1,4 +1,4 @@
-import { JobType } from "@/modules/jobs/types/job";
+import { JobType } from "@/server/types/job";
 import { FormProvider, useForm } from "react-hook-form";
 import JobFiltersForm from "./JobFiltersForm";
 import { JobFiltersType } from "./types";
@@ -17,7 +17,7 @@ const JobFilters = () => {
 
   return (
     <FormProvider {...form}>
-      <div className="dark flex justify-between items-center w-full h-44 bg-gray-900 text-white px-4">
+      <div className="dark flex justify-between items-center w-full min-h-28 bg-gray-900 text-white px-4">
         <JobFiltersForm />
       </div>
     </FormProvider>

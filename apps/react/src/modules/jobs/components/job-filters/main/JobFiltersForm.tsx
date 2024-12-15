@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import RHFMultiRangeSliderField from "@/core/components/form/rhf/RHFMultiRangeSliderField";
 import RHFSelectField from "@/core/components/form/rhf/RHFSelectField";
 import RHFTextField from "@/core/components/form/rhf/RHFTextField";
@@ -6,6 +8,7 @@ import {
   BriefcaseBusinessIcon,
   CircleDollarSign,
   LocateIcon,
+  Search,
   SearchIcon,
 } from "lucide-react";
 import JobFilterInput from "./JobFilterInput";
@@ -20,6 +23,7 @@ const JobFiltersForm = () => {
           className="border-none"
         />
       </JobFilterInput>
+      <Separator orientation="vertical" className="h-14 bg-gray-600" />
       <JobFilterInput icon={<LocateIcon />}>
         <RHFTextField
           name="location"
@@ -27,6 +31,7 @@ const JobFiltersForm = () => {
           className="border-none"
         />
       </JobFilterInput>
+      <Separator orientation="vertical" className="h-14 bg-gray-600" />
       <JobFilterInput icon={<BriefcaseBusinessIcon />}>
         <RHFSelectField
           name="jobType"
@@ -46,27 +51,39 @@ const JobFiltersForm = () => {
           ]}
         />
       </JobFilterInput>
+      <Separator orientation="vertical" className="h-14 bg-gray-600" />
       <JobFilterInput icon={<CircleDollarSign />}>
-        <RHFMultiRangeSliderField
-          name="salary"
-          min={1200}
-          max={20000}
-          className="ml-4"
-          renderLabel={(value) =>
-            value
-              ? fCurrency({
-                  amount: +value,
-                  options: {
-                    currency: "USD",
-                    maximumFractionDigits: 0,
-                    style: "currency",
-                    currencyDisplay: "symbol",
-                  },
-                })
-              : value
-          }
-        />
+        <div className="flex gap-4 flex-col justify-start items-start ml-4 -mt-6">
+          <span className="text-sm text-gray-400">Salary Range</span>
+          <RHFMultiRangeSliderField
+            name="salary"
+            min={1200}
+            max={20000}
+            labelPosition="bottom"
+            renderLabel={(value) =>
+              value
+                ? fCurrency({
+                    amount: +value,
+                    options: {
+                      currency: "USD",
+                      maximumFractionDigits: 0,
+                      style: "currency",
+                      currencyDisplay: "symbol",
+                    },
+                  })
+                : value
+            }
+          />
+        </div>
       </JobFilterInput>
+      <Button
+        type="submit"
+        size="lg"
+        className="bg-blue-500 text-white rounded-full hover:bg-blue-800 "
+      >
+        <Search />
+        Search
+      </Button>
     </div>
   );
 };

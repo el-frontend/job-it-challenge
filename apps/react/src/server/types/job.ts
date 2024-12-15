@@ -11,7 +11,7 @@ export type Job = {
   salary: number;
   location: string;
   jobType: JobType;
-  tags: string[];
+  tags: string;
   company_name: string;
   company_image: string;
   createdAt: string;

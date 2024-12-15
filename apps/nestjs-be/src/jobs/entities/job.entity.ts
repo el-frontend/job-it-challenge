@@ -27,7 +27,7 @@ export class Job {
   jobType: string;
 
   @Column()
-  tags: string[];
+  tags: string;
 
   @Column()
   company_name: string;

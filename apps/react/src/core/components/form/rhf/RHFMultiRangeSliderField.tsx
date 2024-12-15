@@ -8,6 +8,7 @@ type Props = {
   className?: string;
   min?: number;
   max?: number;
+  labelPosition?: "top" | "bottom";
 };
 
 const RHFMultiRangeSliderField: React.FC<Props> = ({
