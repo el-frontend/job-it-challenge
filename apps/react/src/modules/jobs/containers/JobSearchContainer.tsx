@@ -12,7 +12,7 @@ const JobSearchContainer = () => {
     <>
       <JobFilters />
       <ScrollArea className="h-[calc(100vh-180px)] w-full">
-        <div className="container mx-auto grid gap-2 lg:grid-cols-[200px_1fr] pt-6 grid-cols-1">
+        <div className="container mx-auto grid gap-10 lg:grid-cols-[220px_1fr] pt-6 grid-cols-1">
           <SidebarFilters />
           <JobList jobs={query.data ?? []} />
         </div>
