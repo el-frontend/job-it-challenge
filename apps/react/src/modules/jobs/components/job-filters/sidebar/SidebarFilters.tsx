@@ -1,5 +1,11 @@
+import SidebarFilterAnnouncement from "./SidebarFilterAnnouncement";
+
 const SidebarFilters = () => {
-  return <div className="flex flex-col w-[20%]">Filters</div>;
+  return (
+    <div className="flex flex-col py-4">
+      <SidebarFilterAnnouncement />
+    </div>
+  );
 };
 
 export default SidebarFilters;
